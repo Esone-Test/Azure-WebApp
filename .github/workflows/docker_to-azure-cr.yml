@@ -1,0 +1,25 @@
+name: Azure Container Registry Build and Deploy
+
+on:
+  workflow_dispatch:
+  #push:
+  #  branches:
+  #    - "master"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ACR build
+        id: acr
+        uses: azure/acr-build@v1
+        with:
+          service_principal: ${{ secrets.Azure_service_principal }}
+          service_principal_password: ${{ secrets.Azure_service_principal_password }}
+          tenant: ${{ secrets.Azure_tenant }}
+          registry: ${{ secrets.Azure_Container_Registry_name }}
+          repository: ${{ secrets.Azure_Container_Registry_Repository }}
+          image: image
+          git_access_token: ${{ secrets.git_access_token }}
+          folder: src/docker
+          dockerfile: ./Dockerfile
