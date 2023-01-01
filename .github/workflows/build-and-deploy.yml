@@ -12,13 +12,14 @@
 name: "Azure Web App Build and Deploy"
 
 on:
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.gitignore'
-      - '**/*.gitattributes'
+  workflow_dispatch:
+  #push:
+  #  branches:
+  #    - master
+  #  paths-ignore:
+  #    - '**/*.md'
+  #    - '**/*.gitignore'
+  #    - '**/*.gitattributes'
 
 env:
   AZURE_WEBAPP_NAME: servicewebapp112aa  # set this to your application's name
