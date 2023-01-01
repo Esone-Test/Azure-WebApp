@@ -1,4 +1,4 @@
-name: Docker manual
+name: Publish Docker Image to Docker Hub
 
 on:
   workflow_dispatch:
