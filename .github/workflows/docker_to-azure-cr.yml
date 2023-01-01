@@ -21,7 +21,7 @@ jobs:
           tenant: ${{ secrets.Azure_tenant }}
           registry: ${{ secrets.Azure_Container_Registry_name }}
           repository: ${{ secrets.Azure_Container_Registry_Repository }}
-          image: esone:1
+          image: esone/image
           git_access_token: ${{ secrets.git_access_token }}
           folder: src/docker
           dockerfile: ./Dockerfile
