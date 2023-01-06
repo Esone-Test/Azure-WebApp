@@ -23,4 +23,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: load cypress
-      uses: cypress-io/github-action@v5.x.x
+      uses: cypress-io/github-action@v5
