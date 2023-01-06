@@ -22,5 +22,8 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - name: load cypress
       uses: cypress-io/github-action@v5
+      with:
+        browser: chrome
