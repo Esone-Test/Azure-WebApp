@@ -6,4 +6,5 @@ describe('Test on local srv', () => {
     cy.url().should('include', '/localhost')
     cy.getCookie('your-session-cookie').should('exist')
   })
+  
 })
