@@ -1,0 +1,29 @@
+name: Tests by Cypress
+
+on:
+
+  # schedule:
+  #   - cron: '30 22 * * *'
+  #push:
+  #  branches: 
+  #  - 'master' # [ main ]
+  #  # Publish semver tags as releases.
+  #  #tags: none # [ 'v*.*.*' ]
+  #  
+  #pull_request:
+  #  branches: 
+  #  - 'master' # [ main ]
+
+  
+  workflow_dispatch:
+  
+jobs:
+  
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: load cypress
+      uses: cypress-io/github-action@v5
+      with:
+        browser: chrome
