@@ -18,6 +18,9 @@ on:
   workflow_dispatch:
   
 jobs:
+  
   cypress-run:
+    runs-on: ubuntu-latest
     steps:
+    - name: load cypress
       uses: cypress-io/github-action@v5.2.0
