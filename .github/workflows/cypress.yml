@@ -52,6 +52,9 @@ jobs:
     - name: ls
       run: ls
       
+    - name: cat packages.lock.json
+      run: cat packages.lock.json
+      
     - name: load cypress
       uses: cypress-io/github-action@v5
       with:
