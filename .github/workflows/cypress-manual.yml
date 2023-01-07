@@ -25,6 +25,9 @@ jobs:
         run: dotnet restore
 
       - name: echo
+        run: export CYPRESS_RECORD_KEY = ${{ secrets.CYPRESS_RECORD_KEY }}
+
+      - name: echo
         run: printenv $CYPRESS_RECORD_KEY 
 
       - name: run tests
