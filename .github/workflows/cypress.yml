@@ -48,6 +48,12 @@ jobs:
     - name: Test app
       run: dotnet test --no-build
       
+    - name: npn init
+      run: npn init
+      
+    - name: ls
+      run: ls
+      
     - name: load cypress
       uses: cypress-io/github-action@v5
       with:
