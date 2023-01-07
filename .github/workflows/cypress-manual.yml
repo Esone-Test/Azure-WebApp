@@ -1,0 +1,26 @@
+name: Tests by Cypress Manual
+
+on:
+
+  workflow_dispatch:
+  
+env:
+  AZURE_WEBAPP_NAME: servicewebapp112aa  # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: './published'      # set this to the path to your web app project, defaults to the repository root
+  NETCORE_VERSION: '7.0.x'                    # set this to the .NET Core version to use
+  
+jobs:
+  
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: code checkout
+      uses: actions/checkout@v3
+      
+      
+    - name: load cypress
+      uses: cypress-io/github-action@v5
+      with:
+        runTests: false
+        
