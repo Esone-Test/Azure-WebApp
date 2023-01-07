@@ -28,7 +28,7 @@ jobs:
         run: export CYPRESS_RECORD_KEY=${{ secrets.CYPRESS_RECORD_KEY }}
 
       - name: echo
-        run: printenv $CYPRESS_RECORD_KEY 
+        run: echo $CYPRESS_RECORD_KEY 
 
       - name: run tests
         uses: cypress-io/github-action@v5
