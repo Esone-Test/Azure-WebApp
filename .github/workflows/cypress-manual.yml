@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   
   
+env:  
+  NETCORE_VERSION: '7.0.x'
+
 jobs:
   
   cypress-run:
@@ -12,6 +15,18 @@ jobs:
     steps:
       - name: code checkout
         uses: actions/checkout@master
+
+      - name: Setup .NET Core SDK ${{ env.NETCORE_VERSION }}
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.NETCORE_VERSION }}
+
+      - name: Restore packages
+        run: dotnet restore
+
+      - name: build packages
+        run: dotnet build --configuration Release --no-restore
+
 
       - name: Install dependencies
         uses: cypress-io/github-action@v5
