@@ -43,8 +43,7 @@
           ]
         },
         "restoreLockProperties": {
-          "restorePackagesWithLockFile": "true",
-          "restoreLockedMode": true
+          "restorePackagesWithLockFile": "true"
         }
       },
       "frameworks": {

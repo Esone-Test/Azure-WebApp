@@ -28,7 +28,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
 
-      - name: Install dependencies
+      - name: run tests
         uses: cypress-io/github-action@v5
         with:        
           runTests: true
