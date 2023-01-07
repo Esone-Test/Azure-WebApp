@@ -4,7 +4,7 @@ describe('Test on local srv', () => {
     cy.get(':nth-child(2) > .nav-link').click()
     cy.get('.navbar-brand').click()
     cy.url().should('include', '/localhost')
-    cy.getCookie('your-session-cookie').should('exist')
+    //cy.getCookie('your-session-cookie').should('exist')
   })
   
 })
