@@ -24,12 +24,9 @@ jobs:
       - name: Restore packages
         run: dotnet restore
 
-      #- name: build packages
-      #  run: dotnet build --configuration Release --no-restore
-
-      #- name: run webapp localy
-      #  run: dotnet run
-
+      - name: echo
+        run: printenv CYPRESS_RECORD_KEY 
+        
       - name: run tests
         uses: cypress-io/github-action@v5
         with:        
@@ -40,8 +37,6 @@ jobs:
           headed: false
           record: true
         env:
-          # pass the Cypress Cloud record key as an environment variable
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}          
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
