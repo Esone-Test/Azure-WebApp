@@ -27,11 +27,12 @@ jobs:
       - name: build packages
         run: dotnet build --configuration Release --no-restore
 
-      - name: run webapp localy
-        run: dotnet run
+      #- name: run webapp localy
+      #  run: dotnet run
 
       - name: run tests
         uses: cypress-io/github-action@v5
         with:        
+          start: dotnet run
           runTests: true
         
