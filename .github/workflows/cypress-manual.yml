@@ -16,5 +16,5 @@ jobs:
       - name: Install dependencies
         uses: cypress-io/github-action@v5
         with:        
-          runTests: false
+          runTests: true
         
