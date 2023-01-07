@@ -29,6 +29,8 @@ jobs:
     - name: Set up Node.js version
       uses: actions/setup-node@v3
       
+    - name: dot net restore
+      run: dotnet.exe restore --locked-mode
         
     - name: load cypress
       uses: cypress-io/github-action@v5
