@@ -2,7 +2,18 @@ name: Tests by Cypress Manual
 
 on:
   workflow_dispatch:
-  
+  # schedule:
+  #   - cron: '30 22 * * *'
+  #push:
+  #  branches: 
+  #  - 'master' # [ main ]
+  #  # Publish semver tags as releases.
+  #  #tags: none # [ 'v*.*.*' ]
+  #  
+  #pull_request:
+  #  branches: 
+  #  - 'master' # [ main ]
+
   
 env:  
   NETCORE_VERSION: '7.0.x'
