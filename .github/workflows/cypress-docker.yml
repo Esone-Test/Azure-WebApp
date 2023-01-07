@@ -1,4 +1,4 @@
-name: Tests by Cypress
+name: Tests by Cypress Docker
 
 on:
 
