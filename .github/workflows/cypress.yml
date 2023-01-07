@@ -17,6 +17,11 @@ on:
   
   workflow_dispatch:
   
+env:
+  AZURE_WEBAPP_NAME: servicewebapp112aa  # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: './published'      # set this to the path to your web app project, defaults to the repository root
+  NETCORE_VERSION: '7.0.x'                    # set this to the .NET Core version to use
+  
 jobs:
   
   cypress-run:
@@ -28,8 +33,21 @@ jobs:
       
     - name: Set up Node.js version
       uses: actions/setup-node@v3
+    
+    - name: Setup .NET Core SDK ${{ env.NETCORE_VERSION }}
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.NETCORE_VERSION }}
+    
+    - name: Restore packages
+      run: dotnet restore
+
+    - name: Build app
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Test app
+      run: dotnet test --no-build
       
-         
     - name: load cypress
       uses: cypress-io/github-action@v5
       with:
