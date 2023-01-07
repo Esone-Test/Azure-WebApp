@@ -10,3 +10,4 @@ obj/Container/ContainerName.cache
 obj/Container/ContainerId.cache
 obj/Container/ContainerDevelopmentMode.cache
 .vs/webapp_aa1/v17/.suo
+cypress/videos/spec.cy.js.mp4

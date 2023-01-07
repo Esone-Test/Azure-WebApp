@@ -25,8 +25,8 @@ jobs:
         run: dotnet restore
 
       - name: echo
-        run: printenv CYPRESS_RECORD_KEY 
-        
+        run: printenv $CYPRESS_RECORD_KEY 
+
       - name: run tests
         uses: cypress-io/github-action@v5
         with:        
