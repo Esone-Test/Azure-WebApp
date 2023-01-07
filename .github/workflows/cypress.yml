@@ -48,8 +48,8 @@ jobs:
     - name: Test app
       run: dotnet test --no-build
       
-    - name: npn init
-      run: npn init
+    - name: npm init
+      run: npm init
       
     - name: ls
       run: ls
